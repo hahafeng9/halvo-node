@@ -1,0 +1,8 @@
+# never commit runtime output or secrets
+run/
+www/
+*.log
+.env
+.env.*
+client_secret*
+*token*
