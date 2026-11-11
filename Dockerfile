@@ -21,9 +21,9 @@ RUN set -eu; \
     esac; \
     echo "arch: $A"; \
     curl -fsSL -o sing-box.tar.gz \
-      "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-${A}.tar.gz"; \
+      "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-${A}-musl.tar.gz"; \
     tar -xzf sing-box.tar.gz; \
-    mv "sing-box-${SING_BOX_VERSION}-linux-${A}/sing-box" /dl/sing-box; \
+    mv "sing-box-${SING_BOX_VERSION}-linux-${A}-musl/sing-box" /dl/sing-box; \
     curl -fsSL -o cloudflared \
       "https://github.com/cloudflare/cloudflared/releases/download/${CLOUDFLARED_VERSION}/cloudflared-linux-${A}"; \
     curl -fsSL -o nezha-agent.zip \
