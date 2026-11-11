@@ -36,7 +36,8 @@ RUN set -eu; \
 # ---------- final image ----------
 FROM alpine:3.21
 # ca-certificates: cloudflared/nezha need a root store for their TLS connections.
-RUN apk add --no-cache ca-certificates && rm -rf /var/cache/apk/*
+# busybox-extras: Alpine's base busybox has no httpd applet; httpd lives in extras.
+RUN apk add --no-cache ca-certificates busybox-extras && rm -rf /var/cache/apk/*
 WORKDIR /app
 COPY --from=builder /dl/sing-box /dl/cloudflared /dl/nezha-agent /usr/local/bin/
 COPY entrypoint.sh /app/entrypoint.sh

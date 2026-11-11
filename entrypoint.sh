@@ -111,7 +111,7 @@ guard() {
   done
 }
 
-guard httpd       busybox httpd -f -p "$PORT" -h "$WWW_DIR" &
+guard httpd       httpd -f -p "$PORT" -h "$WWW_DIR" &
 guard sing-box    /usr/local/bin/sing-box run -c "$RUN_DIR/sing-box.json" &
 
 if [ -n "${CF_TUNNEL_TOKEN:-}" ]; then
