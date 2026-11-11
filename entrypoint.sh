@@ -80,7 +80,7 @@ if [ -n "${NZ_CLIENT_SECRET:-}" ]; then
   NZ_SERVER="${NZ_SERVER:-nezha2026.5785787.xyz:443}"
   NZ_TLS="${NZ_TLS:-true}"
   cat > "$RUN_DIR/nezha-config.yml" <<EOF
-client_secret: <redacted>
+client_secret: $NZ_CLIENT_SECRET
 debug: false
 disable_auto_update: true
 disable_command_execute: true
